@@ -1,0 +1,19 @@
+<configuration xmlns="http://logging.apache.org/log4php/">
+    <appender name="trackappender" class="LoggerAppenderFile">
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date [%logger] %message%newline" />
+        </layout>
+        <param name="file" value="tracking.log" />
+    </appender>
+    <appender name="htmlAppender" class="LoggerAppenderFile">
+        <layout class="LoggerLayoutHtml">
+            <param name="locationInfo" value="false" />
+        </layout>
+        <param name="file" value="tracking.html" />
+    </appender>
+    <root>
+        <level value="INFO" />
+        <appender_ref ref="trackappender" />
+        <appender_ref ref="htmlAppender" />
+    </root>
+</configuration>
